@@ -166,7 +166,12 @@
         this.$textarea.append("<option value=''></option>");
         var el = null;
         var originalValue = (this.originalValue + "").split(",");
-        if (options.data && options.data.length) {
+        var data = options.data;
+        if(typeof(data)==='function') {
+            data = data(this.instance, options);
+        }
+
+        if (data && data.length) {
             for (var i = 0; i < options.data.length; i++) {
                 el = $("<option />");
                 el.attr("value", options.data[i].id);
