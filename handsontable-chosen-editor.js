@@ -172,12 +172,12 @@
         }
 
         if (data && data.length) {
-            for (var i = 0; i < options.data.length; i++) {
+            for (var i = 0; i < data.length; i++) {
                 el = $("<option />");
-                el.attr("value", options.data[i].id);
-                el.html(options.data[i].label);
+                el.attr("value", data[i].id);
+                el.html(data[i].label);
 
-                if (originalValue.indexOf(options.data[i].id + "") > -1) {
+                if (originalValue.indexOf(data[i].id + "") > -1) {
                     el.attr("selected", true);
                 }
 
